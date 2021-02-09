@@ -2719,3 +2719,38 @@ func TestLongProgramDescription(t *testing.T) {
 		t.Errorf("cmd1Usage: get:\n%s\nexpect:\n%s", text, expect)
 	}
 }
+
+var multilineDescriptionHelp = `usage: programname [-h|--help] [-s|--string "<value>"]
+
+                   prog description which is quite long.
+
+Not only long, but multiline.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                   incididunt ut labore et dolore magna aliqua. Ut enim ad
+                   minim veniam
+
+Arguments:
+
+  -h  --help    Print help information
+  -s  --string  string description
+
+`
+
+func TestMultilineProgramDescription(t *testing.T) {
+	p := NewParser("programname", `prog description which is quite long.
+
+Not only long, but multiline.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam`)
+
+	_ = p.String("s", "string", &Options{Help: "string description"})
+
+	p.Parse([]string{"--help"})
+
+	text := p.Usage(nil)
+	expect := multilineDescriptionHelp
+	if expect != text {
+		t.Errorf("cmd1Usage: get:\n%s\nexpect:\n%s", text, expect)
+	}
+}
