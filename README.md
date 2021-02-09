@@ -1,6 +1,6 @@
 # Golang argparse
 
-[![GoDoc](https://godoc.org/github.com/gtrafimenkov/argparse?status.svg)](https://godoc.org/github.com/gtrafimenkov/argparse) [![Go Report Card](https://goreportcard.com/badge/github.com/gtrafimenkov/argparse)](https://goreportcard.com/report/github.com/gtrafimenkov/argparse) [![Coverage Status](https://coveralls.io/repos/github/gtrafimenkov/argparse/badge.svg?branch=master)](https://coveralls.io/github/gtrafimenkov/argparse?branch=master) [![Build Status](https://travis-ci.org/gtrafimenkov/argparse.svg?branch=master)](https://travis-ci.org/gtrafimenkov/argparse)
+[![GoDoc](https://godoc.org/github.com/gtrafimenkov/argparse?status.svg)](https://godoc.org/github.com/gtrafimenkov/argparse) [![Go Report Card](https://goreportcard.com/badge/github.com/gtrafimenkov/argparse)](https://goreportcard.com/report/github.com/gtrafimenkov/argparse) [![Coverage Status](https://coveralls.io/repos/github/gtrafimenkov/argparse/badge.svg?branch=master)](https://coveralls.io/github/gtrafimenkov/argparse?branch=master)
 
 Let's be honest -- Go's standard command line arguments parser `flag` terribly sucks. 
 It cannot come anywhere close to the Python's `argparse` module. This is why this project exists.
