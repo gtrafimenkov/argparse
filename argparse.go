@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/mitchellh/go-wordwrap"
 )
 
 // DisableDescription can be assigned as a command or arguments description to hide it from the Usage output
@@ -540,8 +542,8 @@ func (o *Command) precedingCommands2Result(result string, chain []string, argume
 		}
 	}
 	// Add program/Command description to the result
-	result = result + "\n\n" + strings.Repeat(" ", leftPadding)
-	result = addToLastLine(result, o.description, maxWidth, leftPadding, true)
+	result = result + "\n\n"
+	result += wordwrap.WrapString(o.description, uint(maxWidth))
 	result = result + "\n\n"
 
 	return result

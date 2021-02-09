@@ -1767,7 +1767,7 @@ func TestOptsValidatePass2(t *testing.T) {
 var pUsage = `usage: verylongprogname <Command> [-h|--help] [-s|--verylongstring-flag1
                         "<value>"] [-i|--integer-flag1 <integer>]
 
-                        prog description
+prog description
 
 Commands:
 
@@ -1786,7 +1786,7 @@ var cmd1Usage = `usage: verylongprogname veryverylongcmd1 [-h|--help] [-f|--very
                         -a|--verylongflagA [-s|--verylongstring-flag1
                         "<value>"] [-i|--integer-flag1 <integer>]
 
-                        cmd1 description
+cmd1 description
 
 Arguments:
 
@@ -1801,7 +1801,7 @@ Arguments:
 var cmd2Usage = `usage: verylongprogname cmd2 [-h|--help] [-s|--verylongstring-flag1 "<value>"]
                         [-i|--integer-flag1 <integer>]
 
-                        cmd2 description
+cmd2 description
 
 Arguments:
 
@@ -1865,7 +1865,7 @@ func TestUsageSubCommand(t *testing.T) {
 	expected := `[sub]Command required
 usage: zooprog <Command> [-h|--help]
 
-               Program that walks us through the zoo
+Program that walks us through the zoo
 
 Commands:
 
@@ -2420,7 +2420,7 @@ func TestFloatFail1(t *testing.T) {
 var pUsageString = `test string
 usage: prog [-h|--help]
 
-            program description
+program description
 
 Arguments:
 
@@ -2449,7 +2449,7 @@ func (s s) String() string {
 var pUsageStringer = `stringer message
 usage: prog [-h|--help]
 
-            program description
+program description
 
 Arguments:
 
@@ -2694,10 +2694,9 @@ func TestCommandHelpSetSnameOnly(t *testing.T) {
 
 var longDescriptionHelp = `usage: programname [-h|--help] [-s|--string "<value>"]
 
-                   prog description which is quite long. Lorem ipsum dolor sit
-                   amet, consectetur adipiscing elit, sed do eiusmod tempor
-                   incididunt ut labore et dolore magna aliqua. Ut enim ad
-                   minim veniam
+prog description which is quite long. Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Ut enim ad minim veniam
 
 Arguments:
 
@@ -2722,13 +2721,12 @@ func TestLongProgramDescription(t *testing.T) {
 
 var multilineDescriptionHelp = `usage: programname [-h|--help] [-s|--string "<value>"]
 
-                   prog description which is quite long.
+prog description which is quite long.
 
 Not only long, but multiline.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                   incididunt ut labore et dolore magna aliqua. Ut enim ad
-                   minim veniam
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
 
 Arguments:
 
