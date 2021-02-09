@@ -2691,3 +2691,31 @@ func TestCommandHelpSetSnameOnly(t *testing.T) {
 		t.Error("Help arugment names should have defaulted")
 	}
 }
+
+var longDescriptionHelp = `usage: programname [-h|--help] [-s|--string "<value>"]
+
+                   prog description which is quite long. Lorem ipsum dolor sit
+                   amet, consectetur adipiscing elit, sed do eiusmod tempor
+                   incididunt ut labore et dolore magna aliqua. Ut enim ad
+                   minim veniam
+
+Arguments:
+
+  -h  --help    Print help information
+  -s  --string  string description
+
+`
+
+func TestLongProgramDescription(t *testing.T) {
+	p := NewParser("programname", "prog description which is quite long. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam")
+
+	_ = p.String("s", "string", &Options{Help: "string description"})
+
+	p.Parse([]string{"--help"})
+
+	text := p.Usage(nil)
+	expect := longDescriptionHelp
+	if expect != text {
+		t.Errorf("cmd1Usage: get:\n%s\nexpect:\n%s", text, expect)
+	}
+}
