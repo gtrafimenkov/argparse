@@ -1,4 +1,4 @@
-module github.com/akamensky/argparse
+module github.com/gtrafimenkov/argparse
 
 go 1.13
 

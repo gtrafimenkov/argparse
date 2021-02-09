@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/akamensky/argparse"
+	"github.com/gtrafimenkov/argparse"
 )
 
 func main() {
